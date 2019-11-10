@@ -5,7 +5,7 @@ const app = express();
 
 app.get('/favicon.ico', (req, res) =>
 {
-    res.status(204);
+res.status(204);
 });
 
 
