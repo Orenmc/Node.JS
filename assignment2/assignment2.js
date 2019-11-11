@@ -19,8 +19,5 @@ app.use('/',(req, res, next) => {
     res.send('<h1>backSlesh</h1>');
 });
 
-
-
-
 console.log('listening...');
 app.listen(3000);
