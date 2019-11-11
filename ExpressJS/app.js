@@ -1,13 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 
-/*
+const app = express();
+
 app.get('/favicon.ico', (req, res) => {
     res.status(204);
 }); //good for  dealing with entering twice (reload twice) the page
-*/
 
-const app = express();
+
+
 
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
@@ -19,7 +21,7 @@ app.use(shopRoutes);
 
 // should be last- default catch
 app.use((req,res,next) =>{
-    res.status(404).send('<h1>page not found</h1>');
+    res.status(404).sendFile(path.join(__dirname,'views','404.html'));
 });
 
 
