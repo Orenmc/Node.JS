@@ -9,12 +9,11 @@ app.get('/favicon.ico', (req, res) => {
 }); //good for  dealing with entering twice (reload twice) the page
 
 
-
-
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
 app.use(bodyParser.urlencoded({extended: true}));   //parsing the request (ends from form!)
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/admin',adminRoutes);
 app.use(shopRoutes);
